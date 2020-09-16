@@ -15,12 +15,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #fffced;
     color: #686767;
   }
-
-  .container {
-    width: 100%;
-    max-width: 1900px;
-    padding: 0 20px;
-  }
 `;
 
 export default GlobalStyle;
