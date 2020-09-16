@@ -3,7 +3,12 @@ import styled from 'styled-components';
 
 const ListWrapper = styled.ul`
   padding: 0 50px;
-`
+
+  li {
+    list-style-type: circle;
+    margin: 10px 0;
+  }
+`;
 
 const Span = styled.span`
   display: inline-block;
