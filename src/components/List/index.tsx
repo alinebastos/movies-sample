@@ -8,6 +8,14 @@ const ListWrapper = styled.ul`
     list-style-type: circle;
     margin: 10px 0;
   }
+
+  a {
+    color: #844b00;
+
+    &:hover {
+      color: #472700;
+    }
+  }
 `;
 
 const Span = styled.span`
