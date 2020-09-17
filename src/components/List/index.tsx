@@ -15,21 +15,26 @@ const Span = styled.span`
   margin: 0 8px;
 `
 
-
 const List = (props: any) => {
   const { movies } = props;
   if (!movies || movies.length === 0) return <p>No movies, sorry</p>;
   return (
     <ListWrapper>
-      {movies.sort().map((movie: any) => {
-        return (
-          <li key={movie.id} className="list">
-            <Span>{movie.score * 100}%</Span><a href={movie.url} target="_blank" rel="noopener noreferrer">
-              {movie.title}{" "}
-            </a><Span>({movie.year})</Span>
-          </li>
-        );
-      })}
+      {movies
+        .sort((movieOne: any, movieTwo: any) =>
+          movieOne.title > movieTwo.title ? 1 : -1
+        )
+        .map((movie: any) => {
+          return (
+            <li key={movie.id} className="list">
+              <Span>{movie.score * 100}%</Span>
+              <a href={movie.url} target="_blank" rel="noopener noreferrer">
+                {movie.title}{" "}
+              </a>
+              <Span>({movie.year})</Span>
+            </li>
+          );
+        })}
     </ListWrapper>
   );
 };
