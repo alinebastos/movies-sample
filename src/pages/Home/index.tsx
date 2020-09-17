@@ -9,7 +9,6 @@ const HomeWrapper = styled.div`
 `
 
 const Home = () => {
-
   const ListLoading = withListLoading(List);
   const [appState, setAppState] = useState({
     loading: false,
@@ -25,7 +24,7 @@ const Home = () => {
         setAppState({ loading: false, movies: movies });
       });
   }, [setAppState]);
-
+  
   return (
     <HomeWrapper>
       <Header title="Movies Evan Likes" />
