@@ -23,9 +23,8 @@ const Span = styled.span`
   margin: 0 8px;
 `
 
-const SearchInput = styled.input`
+const Filter = styled.input`
   border: 1px solid #686767;
-  margin-bottom: 30px;
   padding: 10px;
   border-radius: 4px;
 
@@ -36,6 +35,33 @@ const SearchInput = styled.input`
     outline-width: 1px;
   }
 `;
+
+const Divider = styled.hr`
+  background-color: #ccc;
+  border: 0;
+  border-color: transparent;
+  margin: 20px 0;
+  height: 1px;
+`;
+
+const FilterDecade = styled.select`
+  background-color: #fff;
+  border: 1px solid #686767;
+  padding: 10px;
+  border-radius: 4px;
+
+  &:focus {
+    outline-offset: 0;
+    outline-color: #686767;
+    outline-style: auto;
+    outline-width: 1px;
+  }
+`;
+
+const FilterLabel = styled.label`
+  width: 150px;
+  display: inline-block;
+`
 
 const List = (props: any) => {
   const { movies } = props;
@@ -63,11 +89,24 @@ const List = (props: any) => {
 
   return (
     <div>
-      <SearchInput
+      <FilterLabel>Search by title:</FilterLabel>
+      <Filter
         onChange={(e) => handleChange(e.target.value)}
         type="text"
         placeholder="Search by title"
       />
+      <Divider />
+      <FilterLabel>Search by decade:</FilterLabel>
+      <FilterDecade>
+        <option></option>
+        <option>1960</option>
+        <option>1970</option>
+        <option>1980</option>
+        <option>1990</option>
+        <option>2000</option>
+        <option>2010</option>
+      </FilterDecade>
+      <Divider />
       <ListWrapper>
         {filteredDisplay
           .sort((movieOne: any, movieTwo: any) =>

@@ -5,7 +5,7 @@ import { BiCameraMovie } from "react-icons/bi";
 const HeaderWrapper = styled.header`
   padding: 50px 0 30px;
   border-bottom: 1px solid #ccc;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
 const Title = styled.h1`
