@@ -96,17 +96,6 @@ const List = (props: any) => {
         placeholder="Search by title"
       />
       <Divider />
-      <FilterLabel>Search by decade:</FilterLabel>
-      <FilterDecade>
-        <option></option>
-        <option>1960</option>
-        <option>1970</option>
-        <option>1980</option>
-        <option>1990</option>
-        <option>2000</option>
-        <option>2010</option>
-      </FilterDecade>
-      <Divider />
       <ListWrapper>
         {filteredDisplay
           .sort((movieOne: any, movieTwo: any) =>
